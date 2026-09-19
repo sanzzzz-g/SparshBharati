@@ -10,7 +10,7 @@ graph LR
   UI --> Chord[Pointer and keyboard chord engine]
   UI --> Speech[Web Speech APIs]
   UI --> Haptics[Vibration API]
-  UI --> Translate[/api/translate]
+  UI --> Translate["/api/translate"]
 ```
 
 ## Setup
