@@ -13,4 +13,6 @@ export function patternDuration(pattern:number[]){return pattern.reduce((a,b)=>a
 export function playPattern(pattern:number[]){if(typeof navigator!=='undefined'&&'vibrate' in navigator)navigator.vibrate(pattern)}
 export function stopPattern(){if(typeof navigator!=='undefined'&&'vibrate' in navigator)navigator.vibrate(0)}
 export const slotDuration=(speed:HapticSpeed)=>SLOTS[speed]
-export function vibrationAvailable(){if(typeof navigator==='undefined')return false;return 'vibrate' in navigator&&(navigator.maxTouchPoints>0||Boolean((navigator as Navigator & {userAgentData?:{mobile?:boolean}}).userAgentData?.mobile))}
+export type VibrationEnvironment={vibrate?:()=>boolean;maxTouchPoints?:number;userAgentData?:{mobile?:boolean}}
+export function vibrationStatus(env:VibrationEnvironment){const available=typeof env.vibrate==='function'&&((env.maxTouchPoints??0)>0||env.userAgentData?.mobile===true);return available?{available:true,label:'Vibration ready'}:{available:false,label:"This device can't vibrate from a browser. You'll see each pulse on screen instead."}}
+export function vibrationAvailable(){if(typeof navigator==='undefined')return false;return vibrationStatus(navigator).available}
