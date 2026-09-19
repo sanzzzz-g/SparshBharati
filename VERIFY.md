@@ -8,7 +8,8 @@
 
 ## Needs official-standard review
 - Devanagari matras, halant, conjuncts, and dependent vowel signs are intentionally not mapped because they need review against the official Bharati Braille standard.
-- Tamil uyirmei combinations and punctuation beyond the basic set are intentionally unsupported.
+- Tamil-specific letters ழ, ள, ற, ன, short vowels எ and ஒ, vowel signs/matras, pulli, conjuncts, uyirmei combinations, and punctuation beyond the basic set are intentionally unsupported because their official Bharati cells were not verified.
+- Offline demo translations: `hello` → Hindi `नमस्ते`, Tamil `வணக்கம்`; `good morning` → Hindi `सुप्रभात`, Tamil `காலை வணக்கம்`; `thank you` → Hindi `धन्यवाद`, Tamil `நன்றி`.
 - Hindi/Tamil speech voices, vibration timing, and multi-touch chording need a real Android phone check.
 
 ## Honest limitation
