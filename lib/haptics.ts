@@ -1,6 +1,6 @@
 import type { BrailleCellData } from './braille'
 export type HapticSpeed = 'slow' | 'normal' | 'fast'
-export const SLOTS: Record<HapticSpeed, number> = { slow: 220, normal: 150, fast: 90 }
+export const SLOTS: Record<HapticSpeed, number> = { slow: 600, normal: 450, fast: 320 }
 export const CELL_GAP = 180
 export function buildPattern(cells: BrailleCellData[], speed: HapticSpeed = 'normal') {
   const slot = SLOTS[speed]
